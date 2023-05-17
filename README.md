@@ -1,4 +1,4 @@
-### funinthesum (ATLS 2200 SUM'23)
+### (ATLS 2200 SUM'23)
 # Projects:
   ## HTML -->
   ## CSS -->
