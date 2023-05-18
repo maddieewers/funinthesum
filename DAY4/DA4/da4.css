@@ -1,0 +1,125 @@
+/* General styles - put these straight into your stylesheet */
+
+body {
+    margin: 0;
+  }
+  
+  html {
+    font-family: 'Helvetica neue', Arial, 'sans serif';
+    font-size: 10px;
+    background-color: #ccc;
+  }
+  
+  /* Selectors to be matched up with rulesets */
+  
+  /*
+  .card article img
+  .card footer
+  .card header
+  .card
+  */
+
+  /*THINGS I ADDED*/
+
+  h2 {
+    margin:0;
+    font-size:2em;
+  }
+
+  p {
+    margin:0;
+  }
+
+  article {
+    height: 12em;
+    background-color:rgba(0,0,0,0.1);
+  }
+
+  article p {
+    padding: 1em;
+    line-height: 1.4em;
+    color: white; /*made text with info white*/
+  }
+  
+  /* Rulesets to be matched up with selectors */
+  
+  .card {
+    width: 35em;
+    height: 22em;
+    margin: 5em auto;
+    background-color: red; /*changed colour to color*/
+    border: 0.2em solid black;
+    border-radius: 1.5em;
+  }
+  
+  .card header {
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0.1), rgba(0,0,0,0));
+    border-radius: 1.5em 1.5em 0 0;
+    /*ADDED*/
+    font-size:1em;
+    line-height: 3em;
+    height: 3em;
+    padding: 1em;
+  }
+  
+  .card footer {
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0), rgba(0,0,0,0.1));
+    border-radius: 0 0 1.5em 1.5em;
+    /*ADDED*/
+    height:3em;
+    padding:1em;
+    line-height:3em;
+  }
+
+  /*ADDED*/
+  .card footer p {
+    font-size: 1.5em;
+  }
+  
+  .card article img{
+    max-height: 100%; /*added semicolon to end*/
+    float: right;
+  }
+
+/*BUSINESS CARD (BC) #2*/
+.BC2 {
+  width:35em;
+  height:23em;
+  margin:5em auto;
+  background-color: orange;
+  border:0.2em solid black;
+  border-radius:1.5em;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.BC2 header {
+  font-size:1.5em;
+  background-image: linear-gradient(to bottom,rgba(0,0,0,0.1), rgba(0,0,0,0));
+  border-radius: 1.5em 1.5em 0 0;
+  line-height: 3em;
+  height:3em;
+  padding:1em;
+  color:aliceblue;
+}
+
+.BC2 footer {
+  background-image: linear-gradient(to bottom,rgab(0,0,0,0), rgba(0,0,0,0.1));
+  border-radius:0 0 1.5em 1.5em;
+  height: 3em;
+  padding:1em;
+  line-height:1.5em;
+}
+
+.BC2 footer p {
+  font-size: 1.75em;
+  color:white;
+}
+
+.BC2 article img {
+  max-height:100%;
+  float:right;
+}
+
+.BC2 article {
+  color:beige;
+}
