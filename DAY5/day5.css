@@ -1,0 +1,51 @@
+.test {
+    font-size: 100px;
+    border: 2px dashed purple;
+    padding: 25px;
+    margin: 25px;
+}
+
+p, ul {
+    border: 2px solid rebeccapurple;
+    padding: 0.5em;
+}
+
+li, .block {
+    border: 2px solid blue;
+    padding: 0.5em;
+}
+
+ul {
+    display: flex;
+    list-style: none; /*gets rid of bullet points*/
+    border: 2px solid red; /*this over rules the solid rebeccapurple border*/
+}
+
+.block {
+    display: block; /*made it BLOCK element not INLINE*/
+}
+
+img {
+    height: 200px;
+    width: auto; /*adjust width according to specified height*/
+    border: 2px solid green;
+    padding: 20px;
+    margin: 20px;
+}
+
+.flex {
+    display: flex;
+    border: 2px dashed orangered;
+    /*background-color: blanchedalmond;*/
+    /*background: linear-gradient(
+        105deg,
+        rgba(255,255,255,0.2), 30%
+        rgba(51,51,51,1), 90%
+    )*/
+    background-image: url(smiley.png);
+    background-size: 135px 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/*HTML = root element...if html{font-size:100px;} will change EVERYTHING*/
