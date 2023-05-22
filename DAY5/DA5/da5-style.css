@@ -1,0 +1,31 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.background {
+    height: 3500px;
+    width: auto;
+    position: center;
+}
+
+.score {
+    width: 70em;
+    height: 30em;
+    position: fixed;
+    top: 65mm;
+    left: 650px;
+}
+
+.words {
+    width: 70em;
+    height: 30em;
+    position: fixed;
+    bottom: 65mm;
+    left: 650px;
+}
+
+div img {
+    max-width: 100%;
+    opacity: 80%;
+}
