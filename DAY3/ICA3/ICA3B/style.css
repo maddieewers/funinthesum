@@ -136,3 +136,10 @@ aside img {
 footer {
   margin-top: 10px;
 }
+
+/*images side by side for CREDS page*/
+column {
+  float: left;
+  width: 30%;
+  padding: 5%;
+}

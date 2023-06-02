@@ -107,8 +107,8 @@ h1 {
 
 main img {
     display: block;
-    height: 350px;
-    width: 650px;
+    /* height: 350px;
+    width: 650px; */
     margin-left: auto;
     margin-right: auto;
     padding: 5px;
@@ -143,6 +143,12 @@ nav a, nav span {
     color: blanchedalmond;
 }
 
-/* MAIN setup*/
+/* CONTACT ME link/image grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 5vw);
+    grid-gap: 15px;
+}
 
 
