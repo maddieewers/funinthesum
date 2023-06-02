@@ -1,0 +1,148 @@
+/*to make it fit both browser and mobile
+const resizeOps = () => {
+    document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+  };
+
+  resizeOps();
+  window.addEventListener("resize", resizeOps);
+  
+
+  html, body {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    /*added by me*/
+    /*margin: 0;
+    padding: 0;
+    background-color: #808000;
+  }
+
+  .modal {
+    width: 50vw;
+    height: 50vh;
+    height: calc(var(--vh, 1vh) * 50);
+  }
+*/
+
+
+/*typography setup and coloring and sizing of text*/
+h1, h2, h3 {
+    font-family:'Courier New', Courier, monospace;
+    color: blanchedalmond;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #808000;
+}
+
+body {
+    width: 70%;
+    min-width: 800px;
+    margin: 0 auto;
+}
+
+p {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    color:salmon;
+    text-transform: uppercase;
+    text-align: center;
+    /*putting border around p's*/
+    /* border-color: blanchedalmond;
+    border-top-style: none;
+    border: 2.5px dashed blanchedalmond;
+    padding: 5%; */
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 5px 5px 10px darkolivegreen;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+li {
+    font-size: 1.5rem;
+    font-family:'Courier New', Courier, monospace;
+    color:darkolivegreen;
+}
+
+/*header setup*/
+header {
+    margin-bottom: 8px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+body > * {
+    background-color: darkolivegreen;
+    padding: 1.5%;
+}
+
+main, header, article, aside, footer, section {
+    background-color: darkolivegreen;
+    padding: 1.5%;
+}
+
+nav {
+    background-color: #808000;
+    padding: 1.5%;
+    text-align: center;
+}
+
+h1 {
+    flex: 5;
+    text-transform: uppercase;
+}
+
+main img {
+    display: block;
+    height: 350px;
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+} /*centering img in main*/
+
+nav ul {
+    padding: 0;
+    list-style-type: none;
+    flex: 2;
+    display: flex;
+}
+
+nav {
+    height: 75px;
+    flex: 100%;
+    padding: 5px;
+}
+
+nav li {
+    display: inline;
+    text-align: center;
+    flex: 1;
+}
+
+nav a, nav span {
+    display: inline-block;
+    font-size: 2rem;
+    height: 3rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: blanchedalmond;
+}
+
+/* MAIN setup*/
+
+
