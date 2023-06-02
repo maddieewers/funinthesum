@@ -1,46 +1,78 @@
-const customName = document.getElementById('customname');
-const randomize = document.querySelector('.randomize');
-const story = document.querySelector('.story');
+const button = document.querySelector('#js-new-quote');
+button.addEventListener('click', getQuote);
 
-function randomValueFromArray(array){
-  const random = Math.floor(Math.random()*array.length);
-  return array[random];
+
+const answerButton = document.querySelector('#js-tweet');
+answerButton.addEventListener('click', getColors);
+
+const endpoint = 'https://uselessfacts.jsph.pl/api/v2/facts/random?language=en&type=json';
+
+async function getQuote() {
+    // console.log('It works!');
+    try {
+        const response = await fetch(endpoint);
+        if (!response.ok) {
+            throw Error(response.statusText)
+        }
+        const json = await response.json();
+        // console.log(json.question);
+        // console.log(json);
+        displayQuote(json.text);
+        
+    }
+    catch (err) {
+        console.log(err);
+        alert('Failed to fetch new trivia');
+    }
 }
 
-const storyText = 'It was 30 fahrenheit outside, so :insertx: bundled up to ski. When they got to :inserty:, they found the whole resort covered in snow, then :insertz:. Karen saw the whole thing, but was not surprised — :insertx: weighs 200 pounds, and it was a very cold day.'
-const insertx = ['the college boy', 'ski racer', 'Snow Queen']
-const inserty = ['Vail', 'Eldora', 'A Basin']
-const insertz = ['slipped on ice', 'fell off the lift', 'turned into a slug and crawled away']
+const endpoint2 = "http://colormind.io/api/";
+const proxy_url = "https://cors-anywhere.herokuapp.com/";
 
-randomize.addEventListener('click', result);
+async function getColors() {
+  try {
+    const response = await fetch(proxy_url + endpoint2, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "default",
+        input: [
+          [44,43,44],
+          [3,25,38],
+          "N",
+          "N",
+          "N"
+        ],
+      }),
+    });
 
-function result() {
+    if (!response.ok) {
+      throw new Error("Failed to fetch color data");
+    }
 
-    let newStory = storyText;
+    const json = await response.json();
+    const colors = json.result[1];
+    console.log(colors);
+    displayColors(colors);
 
-  if(customName.value !== '') {
-    const name = customName.value;
-    newStory = newStory.replace ('Karen', name);
+  } catch (err) {
+    console.log(err);
+    alert("Failed to fetch color data");
   }
+}
 
-  if(document.getElementById("uk").checked) {
-    const weight = Math.round(200*0.0714286) + ' stone';
-    const temperature = Math.round((30-32) * (5/9) ) + ' centigrade';
-    newStory = newStory.replace ('30 fahrenheit', temperature);
-    newStory = newStory.replace ('200 pounds', weight);
-  }
-
-    
-    const xItem = randomValueFromArray(insertx);
-    const yItem = randomValueFromArray(inserty);
-    const zItem = randomValueFromArray(insertz);
-
-    newStory = newStory.replaceAll (':insertx:', xItem);
-    newStory = newStory.replace (':inserty:', yItem);
-    newStory = newStory.replace (':insertz:', zItem);
-
-  story.textContent = newStory;
-  story.style.visibility = 'visible';
-
+function displayColors(color) {
+  const body = document.querySelector("body");
+//   body.setAttribute('background-color','rgba('+color+')');
+  body.style.backgroundColor = 'rgba('+color+')';
+  console.log(body.getAttribute('background-color'))
   
+}
+
+function displayQuote(quote) {
+    const quoteText = document.querySelector("#js-quote-text");
+    quoteText.textContent = quote;
+    // console.log('test')
 }
